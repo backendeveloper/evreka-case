@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"rabbitmq","Source":"./modules/rabbitmq","Dir":"modules/rabbitmq"},{"Key":"traefik","Source":"./modules/treafik","Dir":"modules/treafik"}]}

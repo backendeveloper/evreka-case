@@ -1,0 +1,32 @@
+# traefik/config.yaml
+
+# EntryPoints tanımları
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+# Providers ayarları
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+
+# API ayarları
+api:
+  dashboard: true
+  insecure: true  # Test ortamı için uygundur, üretimde devre dışı bırakılmalıdır
+
+# Log ayarları
+log:
+  level: DEBUG  # Gerekirse INFO olarak değiştirebilirsiniz
+
+# Certificates Resolvers (Let's Encrypt için)
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: "kaanuygr@gmail.com"
+      storage: "/letsencrypt/acme.json"
+      httpChallenge:
+        entryPoint: web
