@@ -1,0 +1,8 @@
+fastapi==0.109.1
+uvicorn[standard]==0.22.0
+aio-pika==9.4.3
+python-dotenv==1.0.0
+pydantic==2.9.0
+pydantic-settings==2.0.0
+sqlalchemy==1.4.50
+asyncpg==0.30.0
