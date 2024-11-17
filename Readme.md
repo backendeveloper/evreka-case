@@ -18,4 +18,4 @@ coming to the TCP server for a certain date range + the last data for only one d
 
 docker build -t analytics-api:latest ./../analytics-api     
 docker build -t worker-api:latest ./../worker-api     
-docker build -t gateway-api:latest ./../gateway-api
+docker build -t gateway-api:latest ./../gateway-api 
