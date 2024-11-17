@@ -14,3 +14,8 @@ server should be processed asynchronously because the open time of the connectio
 negatively affects the battery life of the devices sending data. We are currently using
 RabbitMQ or Celery. You should prepare Rest API services where we can access the data
 coming to the TCP server for a certain date range + the last data for only one device.
+
+
+docker build -t analytics-api:latest ./../analytics-api     
+docker build -t worker-api:latest ./../worker-api     
+docker build -t gateway-api:latest ./../gateway-api
