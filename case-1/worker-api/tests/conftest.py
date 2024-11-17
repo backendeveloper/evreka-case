@@ -1,4 +1,5 @@
 import pytest_asyncio
+from typing import AsyncGenerator
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
@@ -14,7 +15,7 @@ AsyncSessionLocal = sessionmaker(
 )
 
 
-async def override_get_db():
+async def override_get_db() -> AsyncGenerator[AsyncSession, None]:
     async with AsyncSessionLocal() as session:
         yield session
 
@@ -32,7 +33,7 @@ async def prepare_database():
 
 
 @pytest_asyncio.fixture(scope="function")
-async def db_session(prepare_database):
+async def db_session(prepare_database) -> AsyncSession:
     async with AsyncSessionLocal() as session:
         yield session
         await session.rollback()

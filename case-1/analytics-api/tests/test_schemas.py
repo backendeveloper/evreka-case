@@ -1,6 +1,7 @@
 from app.schemas.response_schemas import LocationDataResponse
 from datetime import datetime
 
+
 def test_location_data_response():
     data = {
         "id": 1,

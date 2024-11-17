@@ -2,7 +2,9 @@ import pytest
 from datetime import datetime, timedelta
 from httpx import AsyncClient
 from app.db.models import LocationData
+
 from sqlalchemy.ext.asyncio import AsyncSession
+
 
 @pytest.mark.asyncio
 async def test_get_locations(async_client: AsyncClient, db_session: AsyncSession):

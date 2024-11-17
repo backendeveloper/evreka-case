@@ -14,9 +14,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
+
 @app.on_event("startup")
 async def startup_event():
     await init_db()
     logger.info("Database tables created.")
+
 
 app.include_router(analytics.router)

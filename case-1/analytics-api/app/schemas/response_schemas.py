@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
+
 class LocationDataResponse(BaseModel):
     id: int
     device_id: str

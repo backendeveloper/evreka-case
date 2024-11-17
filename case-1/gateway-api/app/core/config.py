@@ -1,13 +1,15 @@
 from pydantic_settings import BaseSettings
 
+
 class Settings(BaseSettings):
-    rabbitmq_host: str = "rabbitmq"
-    rabbitmq_port: int = 5672
-    rabbitmq_user: str = "evreka"
-    rabbitmq_password: str = "evreka"
-    rabbitmq_queue: str = "task_queue"
+    rabbitmq_host: str
+    rabbitmq_port: int
+    rabbitmq_user: str
+    rabbitmq_password: str
+    rabbitmq_queue: str
 
     class Config:
         env_file = ".env"
+
 
 settings = Settings()
